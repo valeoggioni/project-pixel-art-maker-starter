@@ -22,7 +22,7 @@ const userGrid = document.getElementById('sizePicker');
 userGrid.addEventListener('submit', submitGrid);
 
 function makeGrid() {
-    canvas.innerHTML = '';
+    pixelCanvas.innerHTML = '';
     let canvas = document.getElementById('pixelCanvas');
     const height = Number(inputHeight.value);
     const width = Number(inputWidth.value);
