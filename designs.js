@@ -30,10 +30,11 @@ function makeGrid() {
         let newRow = document.createElement('tr');
         canvas.appendChild(newRow);
 
-        for (let x=0; x<width; x++);
+        for (let x=0; x<width; x++){
             //creates the number of cells defined by the user
             let newCell = document.createElement('td');
             newRow.appendChild(newCell);
+        }
     }
 };
 
