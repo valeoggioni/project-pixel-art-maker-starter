@@ -8,19 +8,21 @@ const inputWidth = document.getElementById('inputWidth');
 
 
 // When size is submitted by the user, call makeGrid()
-// sizePicker.addEventListener('submit', function logSubmit(event){
-//     event.preventDefault();
-//     makeGrid();
-// });
+
 
 function submitGrid(event){
-    makeGrid();
     event.preventDefault();
+    event.stopPropagation();
+    makeGrid();
+    initiateColorChange();
 };
 
+//Adding event listener to the submit button 
 const userGrid = document.getElementById('sizePicker');
 userGrid.addEventListener('submit', submitGrid);
 
+//The function that uses the values 
+//in the form to create the table
 function makeGrid() {
     pixelCanvas.innerHTML = '';
     let canvas = document.getElementById('pixelCanvas');
@@ -39,16 +41,19 @@ function makeGrid() {
     }
 };
 
-console.log(makeGrid);
-
+//The function that will fill in or fill out the cells by 
+//the click of the user
+function initiateColorChange(){
 const gridCell = document.querySelectorAll('td');
 
 gridCell.forEach(function(cell) {
     cell.addEventListener('click', function(e) {
-        if (e.target.style.backgroundColor === '') {
-            e.target.style.backgroundColor = colorPicker.value;
-        } else {
-            e.target.style.backgroundColor = '';
+        console.log('clicked');
+            if (e.target.style.backgroundColor === '') {
+                e.target.style.backgroundColor = colorPicker.value;
+            } else {
+                e.target.style.backgroundColor = '';
         }
     });
 });
+}
