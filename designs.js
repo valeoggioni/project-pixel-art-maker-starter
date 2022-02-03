@@ -39,14 +39,14 @@ function makeGrid() {
 
 console.log(makeGrid);
 
-// const gridCell = document.querySelectorAll('td');
+const gridCell = document.querySelectorAll('td');
 
-// gridCell.forEach(function(cell) {
-//     cell.addEventListener('click', function(e) {
-//         if (e.target.style.backgroundColor === '') {
-//             e.target.style.backgroundColor = colorPicker.value;
-//         } else {
-//             e.target.style.backgroundColor = '';
-//         }
-//     });
-// });
+gridCell.forEach(function(cell) {
+    cell.addEventListener('click', function(e) {
+        if (e.target.style.backgroundColor === '') {
+            e.target.style.backgroundColor = colorPicker.value;
+        } else {
+            e.target.style.backgroundColor = '';
+        }
+    });
+});
